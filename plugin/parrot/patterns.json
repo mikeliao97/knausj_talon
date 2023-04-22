@@ -1,0 +1,22 @@
+{
+    "cluck": {
+        "sounds": ["click"],
+        "threshold": {
+            ">probability": 0.99995,
+            ">power": 15
+        },
+        "throttle": {
+            "cluck": 0.07
+        }
+    },
+    "hiss": {
+        "sounds": ["hiss"],
+        "threshold": {
+            ">probability": 0.99995,
+            ">power": 15
+        },
+        "throttle": {
+            "cluck": 0.07
+        }
+    }
+}

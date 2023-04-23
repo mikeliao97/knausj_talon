@@ -4,6 +4,9 @@ triple quote: "'''"
 (triple grave | triple back tick | gravy): insert("```")
 (dot dot | dotdot): ".."
 ellipses: "..."
+spam: ", "
+pipe gap: " | "
+boom: ". "
 (comma and | spamma): ", "
 arrow: "->"
 dub arrow: "=>"
@@ -42,3 +45,8 @@ quote that:
 (grave | back tick) that:
     text = edit.selected_text()
     user.paste("`{text}`")
+
+empty round: "()"
+empty square: "[]"
+empty curly: "{}"
+empty diamond: "<>"

@@ -18,11 +18,11 @@ snap <user.running_applications> <user.window_snap_position>:
 snap <user.running_applications> [screen] <number>:
     user.move_app_to_screen(running_applications, number)
 
-portal [<phrase>]$:
-    user.switcher_focus("Google Chrome")
-    sleep(200ms)
-    user.parse_phrase(phrase or "")
-coder [<phrase>]$:
-    user.switcher_focus("Code")
-    sleep(300ms)
-    user.parse_phrase(phrase or "")
+    portal [<phrase>]$:
+        user.switcher_focus("Google Chrome")
+        sleep(200ms)
+        user.parse_phrase(phrase or "")
+    coder [<phrase>]$:
+        user.switcher_focus("Code")
+        sleep(300ms)
+        user.parse_phrase(phrase or "")

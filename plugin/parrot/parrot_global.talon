@@ -1,6 +1,6 @@
 parrot(cluck):
     print('cluck')
-    core.repeat_phrase(1)
+    core.repeat_command(1)
 
 # parrot(dental_click): app.notify("dental")
 # parrot(labiodental_click): app.notify("labiodental")

@@ -178,3 +178,13 @@ cut line: user.cut_line()
 # duplication
 clone that: edit.selection_clone()
 clone line: edit.line_clone()
+
+
+tug: edit.left()
+drain: edit.word_left()
+push: edit.right()
+step: edit.word_right()
+head: edit.line_start()
+tail: edit.line_end()
+take head: edit.extend_line_start()
+take tail: edit.extend_line_end()

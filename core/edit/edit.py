@@ -97,19 +97,6 @@ class EditActions:
         for _ in range(n):
             actions.edit.right()
 
-    def delete_word_right_n(n: int):
-        """Delete right n words"""
-        for _ in range(n):
-            actions.edit.extend_word_right()
-        actions.edit.delete()
-
-    def delete_word_left_n(n: int):
-        """Delete left n words"""
-        for _ in range(n):
-            actions.edit.extend_word_left()
-        actions.edit.delete()
-
-
 @mod.action_class
 class Actions:
     def paste(text: str):
@@ -155,3 +142,15 @@ class Actions:
         """Copies the word to the right."""
         actions.edit.extend_word_right()
         actions.edit.copy()
+
+    def delete_word_right_n(n: int):
+        """Delete right n words"""
+        for _ in range(n):
+            actions.edit.extend_word_right()
+        actions.edit.delete()
+
+    def delete_word_left_n(n: int):
+        """Delete left n words"""
+        for _ in range(n):
+            actions.edit.extend_word_left()
+        actions.edit.delete()

@@ -181,10 +181,57 @@ clone line: edit.line_clone()
 
 
 tug: edit.left()
+step: edit.right()
+
 drain: edit.word_left()
-push: edit.right()
-step: edit.word_right()
+push: edit.word_right()
+
 head: edit.line_start()
 tail: edit.line_end()
+
 take head: edit.extend_line_start()
 take tail: edit.extend_line_end()
+
+
+# deleting
+scratch <number_small> times: user.delete_left_n(number_small)
+
+drill <number_small> times: user.delete_right_n(number_small)
+
+<user.delete> up:
+    edit.extend_line_up()
+    edit.delete()
+
+<user.delete> down:
+    edit.extend_line_down()
+    edit.delete()
+
+<user.delete> word: edit.delete_word()
+
+scratcher: user.delete_word_left_n(1)
+
+scratcher <number_small> times: user.delete_word_left_n(number_small)
+
+swallow: user.delete_word_right_n(1)
+
+swallow <number_small> times: user.delete_word_right_n(number_small)
+
+<user.delete> head:
+    edit.extend_line_start()
+    edit.delete()
+
+<user.delete> tail:
+    edit.extend_line_end()
+    edit.delete()
+
+<user.delete> way up:
+    edit.extend_file_start()
+    edit.delete()
+
+<user.delete> way down:
+    edit.extend_file_end()
+    edit.delete()
+
+<user.delete> all:
+    edit.select_all()
+    edit.delete()

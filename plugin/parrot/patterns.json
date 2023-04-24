@@ -12,11 +12,11 @@
     "hiss": {
         "sounds": ["hiss"],
         "threshold": {
-            ">probability": 0.99995,
-            ">power": 15
+            ">probability": 0.999,
+            ">power": 30
         },
         "throttle": {
-            "cluck": 0.07
+            "hiss": 0.07
         }
     }
 }

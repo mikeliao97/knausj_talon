@@ -7,6 +7,9 @@ tag(): user.multiple_cursors
 tag(): user.snippets
 tag(): user.splits
 tag(): user.tabs
+#TODO: is this correct?
+tag(): terminal
+
 window reload: user.vscode("workbench.action.reloadWindow")
 window close: user.vscode("workbench.action.closeWindow")
 #multiple_cursor.py support end
@@ -217,6 +220,7 @@ step over: user.vscode("workbench.action.debug.stepOver")
 debug step into: user.vscode("workbench.action.debug.stepInto")
 debug step out [of]: user.vscode("workbench.action.debug.stepOut")
 debug start: user.vscode("workbench.action.debug.start")
+debug run: user.vscode("workbench.action.debug.run")
 debug pause: user.vscode("workbench.action.debug.pause")
 debug stopper: user.vscode("workbench.action.debug.stop")
 debug continue: user.vscode("workbench.action.debug.continue")
@@ -263,7 +267,7 @@ join lines: user.vscode("editor.action.joinLines")
 
 full screen: user.vscode("workbench.action.toggleFullScreen")
 
-curse undo: user.vscode("cursorUndo")
+curse undo: user.vscode("curso40rdo")
 
 select word: user.vscode("editor.action.addSelectionToNextFindMatch")
 skip word: user.vscode("editor.action.moveSelectionToNextFindMatch")
@@ -279,3 +283,4 @@ preview markdown: user.vscode("markdown.showPreview")
 format doc:
     user.vscode("editor.action.formatDocument")
     user.vscode("editor.action.organizeImports")
+next: user.vscode_and_wait("jumpToNextSnippetPlaceholder")

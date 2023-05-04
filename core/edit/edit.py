@@ -12,6 +12,8 @@ class EditActions:
         with clip.capture() as s:
             actions.edit.copy()
         try:
+            print(f"COPYING: {s.text()}")
+            actions.app.notify(f'COPYING: ${s.text()}')
             return s.text()
         except clip.NoChange:
             return ""

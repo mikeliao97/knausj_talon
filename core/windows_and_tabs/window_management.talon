@@ -26,3 +26,13 @@ coder [<phrase>]$:
     user.switcher_focus("Code")
     sleep(300ms)
     user.parse_phrase(phrase or "")
+
+warp [<phrase>]$:
+    user.switcher_focus("warp")
+    sleep(200ms)
+    user.parse_phrase(phrase or "")
+
+notes [<phrase>]$:
+    user.switcher_focus("obsidian")
+    sleep(300ms)
+    user.parse_phrase(phrase or "")

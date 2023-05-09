@@ -16,6 +16,7 @@ tag(): user.homebrew
 tag(): user.tabs
 tag(): user.file_manager
 
+
 suspend:
     key(ctrl-z)
 resume:
@@ -62,3 +63,8 @@ split down:
 
 split max:
     key(cmd-shift-enter)
+
+ask [<user.text>]:
+    key(ctrl-space)
+    sleep(50ms)
+    insert(user.text or "")

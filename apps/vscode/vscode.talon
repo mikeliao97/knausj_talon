@@ -276,7 +276,7 @@ skip word: user.vscode("editor.action.moveSelectionToNextFindMatch")
 cell next: user.vscode("notebook.focusNextEditor")
 cell last: user.vscode("notebook.focusPreviousEditor")
 cell run above: user.vscode("notebook.cell.executeCellsAbove")
-cell run: user.vscode("notebook.cell.execute")
+go: user.vscode("notebook.cell.execute")
 
 install local: user.vscode("workbench.extensions.action.installVSIX")
 preview markdown: user.vscode("markdown.showPreview")
@@ -284,3 +284,16 @@ format doc:
     user.vscode("editor.action.formatDocument")
     user.vscode("editor.action.organizeImports")
 next: user.vscode_and_wait("jumpToNextSnippetPlaceholder")
+disk:
+    key("cmd-s")
+    user.vscode("editor.action.formatDocument")
+    user.vscode("editor.action.organizeImports")
+
+# copilot
+pilot trigger: user.vscode("editor.action.inlineSuggest.trigger")
+pilot next: user.vscode("editor.action.inlineSuggest.showNext")
+pilot last: user.vscode("editor.action.inlineSuggest.showPrevious")
+ok: user.vscode("editor.action.inlineSuggest.commit")
+pilot word: user.vscode("editor.action.inlineSuggest.acceptNextWord")
+pilot nope: user.vscode("editor.action.inlineSuggest.undo")
+pilot cancel: user.vscode("editor.action.inlineSuggest.hide")

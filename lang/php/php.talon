@@ -24,8 +24,8 @@ settings():
 (op | is) loosely equal: " == "
 (op | is) loosely not equal: " != "
 
-state try: "try {\n"
-state catch: "catch (\\Throwable $exception) {\n"
+<user.operator> try: "try {\n"
+<user.operator> catch: "catch (\\Throwable $exception) {\n"
 
 var <phrase> [over]:
     insert("$")

@@ -27,18 +27,18 @@ settings():
     user.code_private_variable_formatter = "SNAKE_CASE"
     user.code_public_variable_formatter = "SNAKE_CASE"
 
-state local: "local"
-state end: "end"
-state then: "then"
-state repeat: "repeat"
-state until: "until"
-state return (null | nil): "return nil"
-state return true: "return true"
-state return false: "return false"
-state return table: user.insert_between("return {", "}")
-state append string: " .. "
+<user.operator> local: "local"
+<user.operator> end: "end"
+<user.operator> then: "then"
+<user.operator> repeat: "repeat"
+<user.operator> until: "until"
+<user.operator> return (null | nil): "return nil"
+<user.operator> return true: "return true"
+<user.operator> return false: "return false"
+<user.operator> return table: user.insert_between("return {", "}")
+<user.operator> append string: " .. "
 
-state label <user.text>:
+<user.operator> label <user.text>:
     insert("::")
     user.insert_formatted(text, "snake")
     insert("::")
@@ -47,9 +47,9 @@ require <user.code_libraries>:
     user.code_insert_library("", code_libraries)
     key(end enter)
 
-state (variable | var) [<user.text>] [over]: user.code_public_variable_formatter(text)
+<user.operator> (variable | var) [<user.text>] [over]: user.code_public_variable_formatter(text)
 
-state local (variable | var) [<user.text>] [over]:
+<user.operator> local (variable | var) [<user.text>] [over]:
     insert("local ")
     user.code_private_variable_formatter(text)
 
@@ -67,4 +67,4 @@ index (var | variable) <user.text>:
     var = user.formatted_text(text, "snake")
     insert("[{var}]")
 
-state return dick: user.insert_between("return {", "}")
+<user.operator> return dick: user.insert_between("return {", "}")

@@ -305,4 +305,5 @@ ctx.lists["self.phrase_ender"] = {
     "clap": "enter",
     "spam": ", space",
     "halt": "space:0",
+    "over": ""
 }

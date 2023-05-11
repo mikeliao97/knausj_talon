@@ -3,6 +3,8 @@ talon open log: menu.open_log()
 talon open rebel: menu.open_repl()
 talon open tail:
     menu.open_repl()
+    sleep(0.5)
+    key(enter)
     sleep(4)
     insert('events.tail()')
     key(enter)

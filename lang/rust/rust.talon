@@ -31,15 +31,15 @@ settings():
 # rust-specific grammars
 
 ## for unsafe rust
-state unsafe: "unsafe "
+<user.operator> unsafe: "unsafe "
 unsafe block: user.code_state_unsafe()
 
 ## rust centric struct and enum definitions
-state (struct | structure) <user.text>:
+<user.operator> (struct | structure) <user.text>:
     insert("struct ")
     insert(user.formatted_text(text, "PUBLIC_CAMEL_CASE"))
 
-state enum <user.text>:
+<user.operator> enum <user.text>:
     insert("enum ")
     insert(user.formatted_text(text, "PUBLIC_CAMEL_CASE"))
 
@@ -48,34 +48,34 @@ toggle use: user.code_toggle_libraries()
 ## Simple aliases
 borrow: "&"
 borrow mutable: "&mut "
-state (a sink | async | asynchronous): "async "
-state (pub | public): "pub "
-state (pub | public) crate: "pub(crate) "
-state (dyn | dynamic): "dyn "
-state constant: "const "
-state (funk | func | function): "fn "
-state (imp | implements): "impl "
-state let mute: "let mut "
-state let: "let "
-state (mute | mutable): "mut "
-state (mod | module): "mod "
-state ref (mute | mutable): "ref mut "
-state ref: "ref "
-state trait: "trait "
-state match: user.code_state_switch()
-state (some | sum): "Some"
-state static: "static "
+<user.operator> (a sink | async | asynchronous): "async "
+<user.operator> (pub | public): "pub "
+<user.operator> (pub | public) crate: "pub(crate) "
+<user.operator> (dyn | dynamic): "dyn "
+<user.operator> constant: "const "
+<user.operator> (funk | func | function): "fn "
+<user.operator> (imp | implements): "impl "
+<user.operator> let mute: "let mut "
+<user.operator> let: "let "
+<user.operator> (mute | mutable): "mut "
+<user.operator> (mod | module): "mod "
+<user.operator> ref (mute | mutable): "ref mut "
+<user.operator> ref: "ref "
+<user.operator> trait: "trait "
+<user.operator> match: user.code_state_switch()
+<user.operator> (some | sum): "Some"
+<user.operator> static: "static "
 self taught: "self."
-state use: user.code_import()
+<user.operator> use: user.code_import()
 
 use <user.code_libraries>:
     user.code_insert_library(code_libraries, "")
     key(; enter)
 
 ## specialist flow control
-state if let some: user.code_insert_if_let_some()
-state if let (ok | okay): user.code_insert_if_let_okay()
-state if let error: user.code_insert_if_let_error()
+<user.operator> if let some: user.code_insert_if_let_some()
+<user.operator> if let (ok | okay): user.code_insert_if_let_okay()
+<user.operator> if let error: user.code_insert_if_let_error()
 
 ## rust centric synonyms
 is some: user.code_insert_is_not_null()
